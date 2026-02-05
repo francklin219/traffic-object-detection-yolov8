@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+
+data/bdd100k/images/
+data/bdd100k/labels/
+runs/
+*.pt
+*.onnx
+
+.DS_Store
+Thumbs.db

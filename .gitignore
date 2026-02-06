@@ -14,3 +14,7 @@ bdd100k/
 
 .DS_Store
 Thumbs.db
+
+assets/*.mp4
+assets/*.avi
+

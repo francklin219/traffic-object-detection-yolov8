@@ -162,7 +162,7 @@ These results indicate a solid baseline performance given the model size (YOLOv8
 
 \#### mAP Curves
 
-!\[mAP curves](assets/map\_curves.png)
+!\[mAP curves](assets/map_curves.png)
 
 
 
@@ -176,7 +176,7 @@ Training and validation losses decrease consistently, showing stable convergence
 
 
 
-!\[Loss curves](assets/loss\_curves.png)
+!\[Loss curves](assets/loss_curves.png)
 
 
 
@@ -190,7 +190,7 @@ The confusion matrix highlights strong performance on dominant classes such as \
 
 
 
-!\[Confusion matrix](assets/confusion\_matrix.png)
+!\[Confusion matrix](assets/matrice de confusion.png)
 
 
 
@@ -208,7 +208,7 @@ The trained model was tested on a real-world traffic video.
 
 ▶️ \*\*Demo video:\*\*  
 
-`assets/traffic\_yolo\_demo.mp4`
+`assets/traffic_yolov.mp4`
 
 
 

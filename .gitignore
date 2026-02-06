@@ -1,12 +1,16 @@
-venv/
+
 __pycache__/
 *.pyc
+venv/
 
-data/bdd100k/images/
-data/bdd100k/labels/
+
 runs/
 *.pt
-*.onnx
+
+
+data/
+bdd100k/
+
 
 .DS_Store
 Thumbs.db

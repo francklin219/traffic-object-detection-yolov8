@@ -162,7 +162,7 @@ These results indicate a solid baseline performance given the model size (YOLOv8
 
 \#### mAP Curves
 
-!\[mAP curves](assets/map_curves.png)
+![mAP curves](assets/map_curves.png)
 
 
 
@@ -175,8 +175,7 @@ These results indicate a solid baseline performance given the model size (YOLOv8
 Training and validation losses decrease consistently, showing stable convergence without overfitting.
 
 
-
-!\[Loss curves](assets/loss_curves.png)
+![Loss curves](assets/loss_curves.png)
 
 
 
@@ -189,8 +188,7 @@ Training and validation losses decrease consistently, showing stable convergence
 The confusion matrix highlights strong performance on dominant classes such as \*\*cars\*\*, \*\*traffic signs\*\*, and \*\*traffic lights\*\*, while rarer classes (e.g. \*train\*) remain more challenging.
 
 
-
-!\[Confusion matrix](assets/matrice de confusion.png)
+![Confusion matrix](assets/confusion_matrix.png)
 
 
 

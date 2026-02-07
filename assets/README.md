@@ -1,292 +1,158 @@
-\# 🚦 Traffic Object Detection with YOLOv8
+# 🚦 Traffic Object Detection with YOLOv8
 
+This project implements a **traffic object detection system** using **YOLOv8**, trained on a subset of the **BDD100K dataset**.
 
-
-This project implements a \*\*traffic object detection system\*\* using \*\*YOLOv8\*\*, trained on a subset of the \*\*BDD100K dataset\*\*.  
-
-The model is capable of detecting multiple road-related objects such as vehicles, pedestrians, riders, traffic lights, and traffic signs, and was trained end-to-end on Google Colab with GPU acceleration.
-
-
+The model is capable of detecting multiple road-related objects such as vehicles, pedestrians, riders, traffic lights, and traffic signs.  
+Training, evaluation, and inference were performed end-to-end using **PyTorch** and **Ultralytics YOLOv8**, with GPU acceleration on **Google Colab**.
 
 ---
 
+## 📖 Project Overview
 
+Road traffic analysis is a key component of intelligent transportation systems and autonomous driving.
 
-\## 📖 Project Overview
+The objectives of this project are to:
 
-
-
-Road traffic analysis is a key component in intelligent transportation systems and autonomous driving.  
-
-The goal of this project is to:
-
-
-
-\- Train a \*\*YOLOv8 object detection model\*\*
-
-\- Convert the \*\*BDD100K annotations\*\* into YOLO format
-
-\- Evaluate model performance across multiple classes
-
-\- Demonstrate inference on real-world traffic videos
-
-\- Provide reproducible training results and visual analytics
-
-
+- Train a **YOLOv8 object detection model**
+- Convert **BDD100K annotations** into YOLO format
+- Evaluate performance across multiple traffic-related classes
+- Visualize training metrics and model behavior
+- Demonstrate inference on real-world traffic images and videos
+- Provide a clean, reproducible, and well-documented ML pipeline
 
 ---
 
+## 🧠 Model & Dataset
 
+### 🔹 Model
 
-\## 🧠 Model \& Dataset
+- **Architecture:** YOLOv8n (Ultralytics)
+- **Framework:** PyTorch
+- **Input resolution:** 640 × 640
+- **Epochs:** 20
+- **Optimizer:** SGD (auto-selected by YOLOv8)
+- **Hardware:** NVIDIA Tesla T4 (Google Colab)
 
+### 🔹 Dataset
 
+- **Dataset:** BDD100K
+- **Task:** Object Detection
+- **Annotations:** Bounding boxes
+- **Number of classes:** 10
 
-\### Model
+**Classes:**
+- person
+- rider
+- car
+- truck
+- bus
+- train
+- motorcycle
+- bicycle
+- traffic light
+- traffic sign
 
-\- \*\*Architecture:\*\* YOLOv8n (Ultralytics)
-
-\- \*\*Framework:\*\* PyTorch
-
-\- \*\*Input size:\*\* 640 × 640
-
-\- \*\*Epochs:\*\* 20
-
-\- \*\*Optimizer:\*\* SGD (auto-selected by YOLOv8)
-
-\- \*\*Hardware:\*\* NVIDIA Tesla T4 (Google Colab)
-
-
-
-\### Dataset
-
-\- \*\*Dataset:\*\* BDD100K
-
-\- \*\*Task:\*\* Object Detection
-
-\- \*\*Annotations:\*\* Bounding boxes
-
-\- \*\*Classes (10):\*\*
-
-&nbsp; - person
-
-&nbsp; - rider
-
-&nbsp; - car
-
-&nbsp; - truck
-
-&nbsp; - bus
-
-&nbsp; - train
-
-&nbsp; - motorcycle
-
-&nbsp; - bicycle
-
-&nbsp; - traffic light
-
-&nbsp; - traffic sign
-
-
+> ⚠️ The raw BDD100K dataset is **not included** in this repository due to size constraints.
 
 ---
 
+## 📂 Project Structure
 
-
-\## 📂 Project Structure
-
-
-
+```text
 traffic-object-detection-yolov8/
-
+│
 ├── src/
-
-│ ├── train.py # Training script
-
-│ ├── predict.py # Inference on images/videos
-
-│ └── convert\_bdd100k\_to\_yolo.py# Dataset conversion script
-
+│   ├── train.py                     # Training script
+│   ├── predict.py                   # Inference on images / videos
+│   └── convert_bdd100k_to_yolo.py   # Dataset conversion script
 │
-
 ├── assets/
-
-│ ├── traffic\_yolo\_demo.mp4 # Inference demo video
-
-│ ├── map\_curves.png # mAP curves
-
-│ ├── loss\_curves.png # Training loss curves
-
-│ └── confusion\_matrix.png # Confusion matrix
-
+│   ├── map_curves.png               # mAP evolution curves
+│   ├── loss_curves.png              # Training & validation loss curves
+│   ├── matrice de confusion.png     # Confusion matrix
+│   └── result.png                   # Example inference result
 │
-
-├── runs/ # YOLO training outputs (partial)
-
-│
-
-├── README.md
-
+├── requirements.txt
 ├── .gitignore
+├── README.md
+📊 Training Results
+🔹 Mean Average Precision (mAP)
+mAP@50: ≈ 0.46
 
+mAP@50–95: ≈ 0.26
 
+These results provide a solid baseline given:
 
+the lightweight YOLOv8n architecture
 
+limited training epochs (20)
 
-> ⚠️ \*\*Note:\*\*  
+class imbalance in the dataset
 
-> The raw dataset (`BDD100K`) and intermediate training files are intentionally excluded from version control.
+📈 mAP Curves
 
 
+🔹 Loss Curves
+Training and validation losses decrease consistently across epochs, indicating stable convergence and no significant overfitting.
 
----
 
 
+🔹 Confusion Matrix
+The confusion matrix shows strong performance for frequent classes such as cars, traffic signs, and traffic lights.
 
-\## 📊 Training Results
+Rare classes (e.g. train, rider) remain more challenging due to fewer samples in the dataset.
 
 
+🎥 Inference Results
+The trained model was tested on real-world traffic scenes.
 
-\### 🔹 Mean Average Precision
+Example detection output:
 
-\- \*\*mAP@50:\*\* ≈ \*\*0.46\*\*
+The model demonstrates:
 
-\- \*\*mAP@50–95:\*\* ≈ \*\*0.26\*\*
+Multi-class detection
 
+Robust bounding box localization
 
+Good performance in dense urban traffic scenes
 
-These results indicate a solid baseline performance given the model size (YOLOv8n) and limited training epochs.
+🎬 Large inference videos are intentionally excluded from GitHub due to file size limits.
 
-
-
-\#### mAP Curves
-
-![mAP curves](assets/map_curves.png)
-
-
-
----
-
-
-
-\### 🔹 Loss Curves
-
-Training and validation losses decrease consistently, showing stable convergence without overfitting.
-
-
-![Loss curves](assets/loss_curves.png)
-
-
-
----
-
-
-
-\### 🔹 Confusion Matrix
-
-The confusion matrix highlights strong performance on dominant classes such as \*\*cars\*\*, \*\*traffic signs\*\*, and \*\*traffic lights\*\*, while rarer classes (e.g. \*train\*) remain more challenging.
-
-
-![Confusion matrix](assets/confusion_matrix.png)
-
-
-
----
-
-
-
-\## 🎥 Inference Demo
-
-
-
-The trained model was tested on a real-world traffic video.
-
-
-
-▶️ \*\*Demo video:\*\*  
-
-`assets/traffic_yolov.mp4`
-
-
-
-The demo shows:
-
-\- Real-time bounding box predictions
-
-\- Multi-class detection
-
-\- Robust performance in dense urban traffic scenes
-
-
-
----
-
-
-
-\## ⚙️ How to Run
-
-
-
-\### 1️⃣ Install dependencies
-
-```bash
+⚙️ How to Run
+1️⃣ Install dependencies
+pip install -r requirements.txt
+Or manually:
 
 pip install ultralytics opencv-python matplotlib pandas
-
 2️⃣ Train the model
-
 python src/train.py
-
-3️⃣ Run inference on a video
-
+3️⃣ Run inference on an image or video
 python src/predict.py --source path/to/video.mp4 --weights best.pt
-
 🚀 Key Takeaways
+Successfully trained a YOLOv8 model for multi-class traffic object detection
 
-Successfully trained a YOLOv8 model for multi-class traffic detection
+Built a complete ML pipeline:
+data conversion → training → evaluation → inference
 
-
-
-Built a full ML pipeline: data conversion → training → evaluation → inference
-
-
-
-Demonstrated solid results with limited compute resources
-
-
+Achieved solid results with limited compute resources
 
 Project structured for reproducibility and professional presentation
 
-
-
 🔮 Future Improvements
+Train for more epochs
 
-Train for more epochs and/or use a larger model (YOLOv8m/l)
+Use a larger model (YOLOv8m / YOLOv8l)
 
+Improve class balance (train, rider, motorcycle)
 
+Apply advanced data augmentation
 
-Apply data augmentation strategies
+Export model to ONNX / TensorRT
 
-
-
-Balance rare classes (e.g. train, rider)
-
-
-
-Export the model to ONNX / TensorRT for deployment
-
-
-
-Real-time inference benchmarking (FPS evaluation)
-
-
+Benchmark real-time inference performance (FPS)
 
 👤 Author
-
-Franck
-
-Machine Learning \& Computer Vision Project
+Francklin
+Machine Learning & Computer Vision Project
 
 YOLOv8 · Object Detection · Traffic Analysis
-

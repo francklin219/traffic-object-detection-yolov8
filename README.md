@@ -59,6 +59,20 @@ traffic-object-detection-yolov8/
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 📊 Training Results
 🔹 Mean Average Precision (mAP)
 mAP@50: ≈ 0.46
@@ -96,7 +110,7 @@ The confusion matrix shows strong performance for frequent classes such as cars,
 
 
 
-![Confusion Matrix](assets/matrice de confusion.png)
+![matrice de confusion](assets/matrice de confusion.png)
 
 Rare classes (e.g. train, rider) remain more challenging due to fewer samples in the dataset.
 

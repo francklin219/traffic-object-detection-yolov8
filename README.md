@@ -73,17 +73,30 @@ limited training epochs (20)
 
 class imbalance in the dataset
 
+
+
+
+
 ![mAP Curves](assets/map_curves.png)
 
 
 🔹 Loss Curves
 Training and validation losses decrease consistently across epochs, indicating stable convergence and no significant overfitting.
+
+
+
+
+
+
 ![Loss Curves](assets/loss_curves.png)
 
 
 🔹 Confusion Matrix
 The confusion matrix shows strong performance for frequent classes such as cars, traffic signs, and traffic lights.
-![Confusion Matrix](assets/confusion_matrix.png)
+
+
+
+![Confusion Matrix](assets/matrice de confusion.png)
 
 Rare classes (e.g. train, rider) remain more challenging due to fewer samples in the dataset.
 

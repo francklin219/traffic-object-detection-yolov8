@@ -85,8 +85,16 @@ traffic-object-detection-yolov8/
 
 
 
+
+
+
+
+
+
 📊 Training Results
+
 🔹 Mean Average Precision (mAP)
+
 mAP@50: ≈ 0.46
 
 mAP@50–95: ≈ 0.26

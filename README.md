@@ -141,6 +141,8 @@ Good performance in dense urban traffic scenes
 ![Inference Result](assets/result.png)
 
 🎬 Large inference videos are intentionally excluded from GitHub due to file size limits.
+![Inference Demo](assets/traffic_road_yolov8.gif)
+
 
 
 ⚙️ How to Run
